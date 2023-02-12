@@ -1,9 +1,9 @@
 package cuentas;
 
 /**
- * @author Cepeda Guaman Rolando
  *
- * @version v1 Febrero_2023
+ * @author Rolando
+ * @version v1.0 Febrero_2023
  */
 public class CCuenta {
 
@@ -15,15 +15,13 @@ public class CCuenta {
     public CCuenta() {
     }
 
-    /*COnstructor por parametro*/
+    /*Constructor por parametros*/
     /**
-     * @param nom. Nombre del propietario de la cuenta y es una cadena de texto.
-     * @param cue. Numero de cuenta del propietario y sera una cadena de texto.
-     * @param sal. Valor en decimal (double) y sera el saldo que tenemos dentro
-     * de la cuenta.
-     * @param tipo. Valor en decimal (double). 
      *
-     *
+     * @param nom Nombre del propietario de la cuenta
+     * @param cue Numero de cuenta del propiertario
+     * @param sal Saldo que tenemos en nuestra cuenta
+     * @param tipo tipor de interes que tiene el propietario e la cuenta
      */
     public CCuenta(String nom, String cue, double sal, double tipo) {
         nombre = nom;
@@ -31,22 +29,23 @@ public class CCuenta {
         saldo = sal;
     }
 
-    /*Metodo que permite consultar consultar mi saldo actual*/
     /**
-     * @return devuelve el saldo de mi cuenta en decimales
+     *
+     * @return devuel el saldo que tengo en la cuenta
      */
     public double estado() {
         return getSaldo();
     }
 
-    /*Metodo que permite ingresar dinero a mi cuenta siempre en cuanto la cantidad que ingrese sea positivo*/
+    //Metodo que permite ingresar dinero a mi cuenta siempre en cuanto la cantidad que ingrese sea positivo*/
     /**
-     * @throws Execption. Hace una llamada a Exeption y lanzara la exepcion
-     * cuando ingresemos una cantidad que sea negativo.
      *
-     * @exception e. Hace una llamada a exepcion "e" y lanzara el error
-     * encontrado.
+     * @param cantidad ingresamos una cantidad de dinero que se sumara ala saldo
+     * que tengamos en la cuenta
+     * @throws Exception Hace una llamada a Exeption y lanzara la exepcion
+     * cuando ingresemos una cantidad que sea negativo
      */
+    //@exception e. Hace una llamada a exepcion "e" y lanzara el error encontrado
     public void ingresar(double cantidad) throws Exception {
         if (cantidad < 0) {
             throw new Exception("No se puede ingresar una cantidad negativa");
@@ -54,16 +53,14 @@ public class CCuenta {
         setSaldo(getSaldo() + cantidad);
     }
 
-    /*Metodo que permite retirar dinero a mi cuenta siempre en cuanto la cantidad que ingrese sea positivo y sea menor 
-    a la cantidad que tengamos en la cuenta*/
     /**
-     * @throws Execption. Hace una llamada a Exeption y lanzara la exepcion
-     * cuando ingresemos una cantidad que sea negativo o que la cantidad que
-     * tengamos en la cuenta sea inferior a lo que vamos a retirar.
      *
-     * @exception e. Hace una llamada a exepcion "e" y lanzara el error
-     * encontrado.
+     * @param cantidad ingresamos una cantidad de dinero que se le restara al
+     * saldo que tengamos en la cuenta
+     * @throws Exception Hace una llamada a Exeption y lanzara la exepcion
+     * cuando ingresemos una cantidad que sea negativo.
      */
+    //   @exception e. Hace una llamada a exepcion "e" y lanzara el error encontrado
     public void retirar(double cantidad) throws Exception {
         if (cantidad <= 0) {
             throw new Exception("No se puede retirar una cantidad negativa");
@@ -75,58 +72,66 @@ public class CCuenta {
     }
 
     /**
-     * @return devuelve el nombre del propietario de la cuenta.
+     *
+     * @return devuelve el nombre del propietario de la cuenta
      */
     public String getNombre() {
         return nombre;
     }
 
     /**
-     * @param nombres. Es el nombre del propietario de la cuenta
+     *
+     * @param nombre Modifica nombre del propietario de la cuenta
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
     /**
-     * @return devuelve el numero de la cuenta del propietario.
+     *
+     * @return Devuelve el numero de cuenta del propietario
      */
     public String getCuenta() {
         return cuenta;
     }
 
     /**
-     * @param cuenta. Es el numero de cuenta del propiertario
+     *
+     * @param cuenta Modifica el numero de cuenta
      */
     public void setCuenta(String cuenta) {
         this.cuenta = cuenta;
     }
 
-     /**
-     * @return devuelve el saldo actual de la cuenta.
+    /**
+     *
+     * @return devuelve el saldo que hay en la cuenta
      */
     public double getSaldo() {
         return saldo;
     }
 
     /**
-     * @param saldo. Es el saldo que tenemos en la cuenta.
+     *
+     * @param saldo Modifica el saldo de la cuenta
      */
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 
     /**
-     * @return devuelve el tipo de interes que tiene el propietario.
+     *
+     * @return Devuelve el tipo de interes del propietaro de la cuenta
      */
     public double getTipoInterés() {
         return tipoInterés;
     }
 
     /**
-     * @param tipoInterés. Es el tipo de interes que tiene el propietario.
+     *
+     * @param tipoInteres Modifica el tipo de interes
      */
-    public void setTipoInterés(double tipoInterés) {
-        this.tipoInterés = tipoInterés;
+    public void setTipoInterés(double tipoInteres) {
+        this.tipoInterés = tipoInteres;
     }
 }
